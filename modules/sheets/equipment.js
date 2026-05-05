@@ -1,4 +1,4 @@
-export default class equipmentsheet extends ItemSheet {
+export default class equipmentsheet extends foundry.appv1.sheets.ItemSheet {
     get template ()  {
         return "systems/atlara/templates/sheets/equipment.html";
     }

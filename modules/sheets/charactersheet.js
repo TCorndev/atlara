@@ -1,4 +1,4 @@
-export default class charactersheet extends ActorSheet {
+export default class charactersheet extends foundry.appv1.sheets.ActorSheet {
     get template ()  {
         return "systems/atlara/templates/sheets/character-sheet.html";
     }

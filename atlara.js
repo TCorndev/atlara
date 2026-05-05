@@ -10,10 +10,11 @@ Hooks.once("init", function () {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   // Add custom constants for configuration.
-  //CONFIG.MYSYSTEM = mysystem;
   CONFIG.INIT = true;
   const Items =  foundry.documents.collections.Items; //check if necessary
-  Actors.unregisterSheet("core", ActorSheet);
+  const Actors = foundry.documents.collections.Actors;
+  const ItemSheet = foundry.appv1.sheets.ItemSheet;
+  Actors.unregisterSheet("core", Actors);
   Actors.registerSheet("atlara", charactersheet, { 
     types: ["character"], 
     makeDefault: true
