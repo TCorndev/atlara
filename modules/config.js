@@ -1,6 +1,6 @@
-export const mysystem = {};
+export const atlara = {};
 
-mysystem.attributes = {
+atlara.attributes = {
 
     Test: "TEST!"
 }

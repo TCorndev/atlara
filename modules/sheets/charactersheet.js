@@ -1,6 +1,6 @@
-export default class myactorsheet extends ActorSheet {
+export default class charactersheet extends ActorSheet {
     get template ()  {
-        return "systems/mysystem/templates/sheets/actor-sheet.html";
+        return "systems/atlara/templates/sheets/character-sheet.html";
     }
     activateListeners(html)
     {
@@ -54,7 +54,7 @@ export default class myactorsheet extends ActorSheet {
         }
         let degrees = Math.floor(successes/Math.max(difficulty - bonus, 1));
         const html = await renderTemplate(
-            "systems/mysystem/templates/chat/skill-roll.hbs",
+            "systems/atlara/templates/chat/skill-roll.hbs",
             {
                 skill,
                 results: result.map(r => ({

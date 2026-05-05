@@ -1,7 +1,7 @@
 {
-    "id": "mysystem",
-    "title": "My Quick Test System",
-    "description": "Is this even necessary",
+    "id": "Atlara",
+    "title": "Atlara",
+    "description": "System for Saga of Atlara",
     "version": "0.0.1",
     "compatibility": {
         "minimum": 13,
@@ -10,8 +10,8 @@
     "authors": [{
         "name": "me"
     }],
-    "esmodules": ["mysystem.js"],
-    "styles": ["mysystem.css"],
+    "esmodules": ["atlara.js"],
+    "styles": ["atlara.css"],
     "packs": [],
     "languages": [],
     "socket": false,

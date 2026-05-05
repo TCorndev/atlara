@@ -1,6 +1,6 @@
 export default class equipmentsheet extends ItemSheet {
     get template ()  {
-        return "systems/mysystem/templates/sheets/equipment.html";
+        return "systems/atlara/templates/sheets/equipment.html";
     }
     activateListeners(html)
     {
@@ -19,7 +19,7 @@ export default class equipmentsheet extends ItemSheet {
         }
         const stats = this.item.system.stats;
         const html =  await renderTemplate(
-            "systems/mysystem/templates/partials/equip-add-stat.hbs",
+            "systems/atlara/templates/partials/equip-add-stat.hbs",
             {
                 stats
             }

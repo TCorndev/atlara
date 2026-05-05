@@ -1,5 +1,5 @@
 //import mysystem from "./modules/config.js";
-import myactorsheet from "./modules/sheets/myactorsheet.js";
+import charactersheet from "./modules/sheets/charactersheet.js";
 import equipmentsheet from "./modules/sheets/equipment.js";
 
 /* -------------------------------------------- */
@@ -14,11 +14,11 @@ Hooks.once("init", function () {
   CONFIG.INIT = true;
   const Items =  foundry.documents.collections.Items; //check if necessary
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("mysystem", myactorsheet, { 
+  Actors.registerSheet("atlara", charactersheet, { 
     types: ["character"], 
     makeDefault: true
   });
-  // Actors.registerSheet("mysystem", mymonstersheet, { 
+  // Actors.registerSheet("atlara", mymonstersheet, { 
   //   types: ["monster"], 
   //   makeDefault: true
   // });
