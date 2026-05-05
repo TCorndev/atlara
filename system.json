@@ -1,0 +1,24 @@
+{
+    "id": "mysystem",
+    "title": "My Quick Test System",
+    "description": "Is this even necessary",
+    "version": "0.0.1",
+    "compatibility": {
+        "minimum": 13,
+        "verified": 13
+    },
+    "authors": [{
+        "name": "me"
+    }],
+    "esmodules": ["mysystem.js"],
+    "styles": ["mysystem.css"],
+    "packs": [],
+    "languages": [],
+    "socket": false,
+    "grid": {
+        "distance": 5,
+        "units": "ft"
+    },
+    "primaryTokenAttribute": "HP",
+    "initiative": "1d20"
+}

@@ -1,0 +1,17 @@
+<div style="text-transform: capitalize">{{skill}} roll</div>
+
+<div class="dice-roll">
+    <div class="dice-result">
+        <div class="dice-formula">{{calc}}</div>
+        <div class="dice-formula">
+            {{#each results}}
+            <span {{#if this.exploded}} style="color: red" {{/if}} {{#if this.success}} style="color: green" {{/if}}>
+            {{this.result}}
+            </span>
+            {{/each}}
+        </div>
+        <div class="dice-formula">Crits: {{explosions}}</div>
+        <h4 class="dice-total"> Successes: {{successes}} / Difficulty: {{difficulty}} {{#if bonuspos}} <span style="color: green">(-{{bonus}}) </span> {{/if}} {{#if bonusneg}} <span style="color: red">(+{{bonus}}) </span> {{/if}}</h4>
+        <h4 class="dice-total">Hits: {{degrees}}</h4>
+    </div>
+</div>

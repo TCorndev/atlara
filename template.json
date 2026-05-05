@@ -1,0 +1,214 @@
+{
+    "Actor": {
+        "types": [
+            "character",
+            "monster"
+        ],
+        "character": {
+            "details": {
+                "name": "name",
+                "merit": "merit",
+                "level": 1,
+                "lineage": "lineage",
+                "flaw": "flaw",
+                "tier": "tier",
+                "archetype": "archetype",
+                "ethos": "ethos",
+                "title": "title"
+            },
+            "traits": {
+                "body": {
+                    "base": 1,
+                    "bonus": 0
+                },
+                "grace": {
+                    "base": 1,
+                    "bonus": 0
+                },
+                "wits": {
+                    "base": 1,
+                    "bonus": 0
+                },
+                "luck": {
+                    "base": 1,
+                    "bonus": 0
+                },
+                "mind": {
+                    "base": 1,
+                    "bonus": 0
+                },
+                "soul": {
+                    "base": 1,
+                    "bonus": 0
+                }
+            },
+            "thresholds": {
+                "physique": {
+                    "base": 1,
+                    "bonus": 0
+                },
+                "avoidance": {
+                    "base": 1,
+                    "bonus": 0
+                },
+                "discipline": {
+                    "base": 1,
+                    "bonus": 0                 
+                }
+            },
+            "qualities": {
+
+            },
+            "skills":{
+                "warfare": {
+                    "die": 4,
+                    "trait": "body",
+                    "bonus": 0,
+                    "difficulty": 1
+                },
+                "cunning": {
+                    "die": 4,
+                    "trait": "wits",
+                    "bonus": 0,
+                    "difficulty": 1
+                },
+                "esoterica": {
+                    "die": 4,
+                    "trait": "mind",
+                    "bonus": 0,
+                    "difficulty": 1
+                },
+                "athletics": {
+                    "die": 4,
+                    "trait": "body",
+                    "bonus": 0,
+                    "difficulty": 1
+                },
+                "survival": {
+                    "die": 4,
+                    "trait": "wits",
+                    "bonus": 0,
+                    "difficulty": 1
+                },
+                "knowledge": {
+                    "die": 4,
+                    "trait": "mind",
+                    "bonus": 0,
+                    "difficulty": 1
+                },
+                "aptitude": {
+                    "die": 4,
+                    "trait": "mind",
+                    "bonus": 0,
+                    "difficulty": 1
+                },
+                "creativity": {
+                    "die": 4,
+                    "trait": "soul",
+                    "bonus": 0,
+                    "difficulty": 1
+                },
+                "diplomacy": {
+                    "die": 4,
+                    "trait": "soul",
+                    "bonus": 0,
+                    "difficulty": 1
+                }
+            },
+            "conditions":{
+                "health":{
+                    "hp": 4,
+                    "wounds": 0
+                },
+                "destiny":{
+                    "cards": 4
+                }
+            }
+        },
+        "monster": {
+            "name": "Rat",
+            "status": "hungry"
+        }
+    },
+    "Item": {
+        "types":[
+            "item",
+            "equipment",
+            "resource",
+            "feat",
+            "arts",
+            "crafts",
+            "tongues",
+            "path"
+            ],
+        "templates": {
+            "base": {
+                "weight": 0,
+                "value": 0,
+                "description": "an item of some sort",
+                "attacktype": "physique"
+            },
+            "equipmentdata": {
+                "stats":{
+                    "warfare": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "cunning": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "esoterica": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "athletics": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "survival": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "knowledge": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "aptitude": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "creativity": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "diplomacy": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "physique": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "avoidance": {
+                        "tier": 0,
+                        "selected": false
+                    },
+                    "discipline": {
+                        "tier": 0,
+                        "selected": false
+                    }
+                },   
+                "slot": "",
+                "allselected": false,
+                "equipped": false
+            }
+        },
+        "item": {
+            "templates": ["base"]
+        },
+        "equipment": {
+            "templates": ["base", "equipmentdata"]
+        }
+    }
+}

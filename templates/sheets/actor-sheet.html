@@ -1,0 +1,174 @@
+<form class="actor-sheet {{cssClass}}" autocomplete="off">
+    <div class="sheet">
+        <div class="fullbox flex vert-center">        
+            <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64">
+            <div class="title"><h1>"Saga of Atlara"</h1></div>
+        </div>
+        <div class="fullbox information">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input name="system.details.name" value="{{actor.system.details.name}}"></td>
+                    <td>Merit</td>
+                    <td><input name="system.details.merit" value="{{actor.system.details.merit}}"></td>
+                    <td>Level</td>
+                    <td><input name="system.details.level" value="{{actor.system.details.level}}"></td>
+                </tr>
+                <tr>
+                    <td>Lineage</td>
+                    <td><input name="system.details.lineage" value="{{actor.system.details.lineage}}"></td>
+                    <td>Flaw</td>
+                    <td><input name="system.details.flaw" value="{{actor.system.details.flaw}}"></td>
+                    <td>Tier</td>
+                    <td><input name="system.details.tier" value="{{actor.system.details.tier}}"></td>
+                </tr>
+                <tr>
+                    <td>Archetype</td>
+                    <td><input name="system.details.archetype" value="{{actor.system.details.archetype}}"></td>
+                    <td>Ethos</td>
+                    <td><input name="system.details.ethos" value="{{actor.system.details.ethos}}"></td>
+                    <td>Title</td>
+                    <td><input name="system.details.title" value="{{actor.system.details.title}}"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="fullbox traits">
+            <table>
+                <tr>
+                    <th colspan="6">Traits</th>
+                </tr>
+                <tr>
+                    <td>Body</td>
+                    <td>Grace</td>
+                    <td>Wits</td>
+                    <td>Luck</td>
+                    <td>Mind</td>
+                    <td>Soul</td>
+                </tr>
+                <tr>
+                    <td><input type="number" name="system.traits.body.base" value="{{actor.system.traits.body.base}}"></td>
+                    <td><input type="number" name="system.traits.grace.base" value="{{actor.system.traits.grace.base}}"></td>
+                    <td><input type="number" name="system.traits.wits.base" value="{{actor.system.traits.wits.base}}"></td>
+                    <td><input type="number" name="system.traits.luck.base" value="{{actor.system.traits.luck.base}}"></td>
+                    <td><input type="number" name="system.traits.mind.base" value="{{actor.system.traits.mind.base}}"></td>
+                    <td><input type="number" name="system.traits.soul.base" value="{{actor.system.traits.soul.base}}"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="fullbox thresholds-qualities flex">
+            <table class="thresholds border">
+                <tr>
+                    <th colspan="3">THRESHOLDS</th>
+                </tr>
+                <tr>
+                    <td><i>Physique</i></td>
+                    <td><i>Avoidance</i></td>
+                    <td><i>Discipline</i></td>
+                </tr>
+                <tr>
+                    <td><input type="number" name="system.thresholds.physique.base" value="{{actor.system.thresholds.physique.base}}"></td>
+                    <td><input type="number" name="system.thresholds.avoidance.base" value="{{actor.system.thresholds.avoidance.base}}"></td>
+                    <td><input type="number" name="system.thresholds.discipline.base" value="{{actor.system.thresholds.discipline.base}}"></td>
+                </tr>
+            </table>
+            <div class="qualities">
+                <label class="title">QUALITIES</label>
+                <textarea class="qualities"></textarea>
+            </div>
+        </div>
+        <div class="fullbox skills-conditions flex">
+            <table class="border">
+                <tr>
+                    <th colspan="5">SKILLS</th>
+                </tr>
+                <tr>
+                    <th>skill</th>
+                    <th></th>
+                    <th>trait</th>
+                    <th>die</th>
+                    <th>difficulty</th>
+                </tr>
+                {{#each actor.system.skills}}
+                <tr>
+                    <td>{{@key}}</td>
+                    <td><button class="skillroll" data-skill="{{@key}}">Roll</button></td>
+                    <td>
+                        <select name="system.skills.{{@key}}.trait">
+                            <option value="body" {{#if (eq this.trait "body")}}selected{{/if}}>Body</option>
+                            <option value="grace" {{#if (eq this.trait "grace")}}selected{{/if}}>Grace</option>
+                            <option value="wits" {{#if (eq this.trait "wits")}}selected{{/if}}>Wits</option>
+                            <option value="luck" {{#if (eq this.trait "luck")}}selected{{/if}}>Luck</option>
+                            <option value="mind" {{#if (eq this.trait "mind")}}selected{{/if}}>Mind</option>
+                            <option value="soul" {{#if (eq this.trait "soul")}}selected{{/if}}>Soul</option>
+                        </select>
+                    </td>
+                    <td>        
+                        <select name="system.skills.{{@key}}.die">
+                            <option value="4" {{#if (eq this.die "4")}}selected{{/if}}>d4</option>
+                            <option value="6" {{#if (eq this.die "6")}}selected{{/if}}>d6</option>
+                            <option value="8" {{#if (eq this.die "8")}}selected{{/if}}>d8</option>
+                            <option value="10" {{#if (eq this.die "10")}}selected{{/if}}>d10</option>
+                            <option value="12" {{#if (eq this.die "12")}}selected{{/if}}>d12</option>
+                        </select>
+                    </td>
+                    <td><input type="number" name="system.skills.{{@key}}.difficulty" value="{{this.difficulty}}" style="width: 40px"></td>
+                </tr>
+                {{/each}}
+            </table>
+            <table class="border conditions">
+                <tr class="border">
+                    <th colspan="2">CONDITIONS</th>
+                </tr>
+                <tr>
+                    <td>Health Track</td>
+                    <td>Destiny Hand</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                        <input type="checkbox">
+                        <input type="checkbox">
+                        <input type="checkbox">
+                    </td>
+                    <td>4 cards</td>
+                </tr>
+            </table>
+        </div>
+        <div class="fullbox feats-arts-path">
+            <table>
+                <tr>
+                    <th>FEATS</th>
+                    <th>ARTS, CRAFTS, & TONGUES</th>
+                    <th>PATH</th>
+                </tr>
+                <tr>
+                    <td><textarea></textarea></td>
+                    <td><textarea></textarea></td>
+                    <td><textarea></textarea></td>
+                </tr>
+            </table>
+        </div>
+        <div class="fullbox gear">
+            <table>
+                <tr>
+                    <th colspan="3">GEAR</th>
+                </tr>
+                <tr>
+                    <th>Equipment</th>
+                    <th>Inventory</th>
+                    <th>Resources</th>
+                </tr>
+                <tr>
+                    <td class="inventory" style="background-color:pink"><ul >
+                        {{#each actor.items}}
+                            <li><span class="display-item" data-item="{{this.id}}">{{this.name}}</span> <input type="checkbox" class="equip-toggle" data-item="{{this._id}}" {{#if this.system.equipped}} checked {{/if}} ></li>
+                        {{/each}}
+                        </ul>
+                    </td>
+                    <td><textarea></textarea></td>
+                    <td><textarea></textarea></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>

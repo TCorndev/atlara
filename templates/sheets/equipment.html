@@ -1,0 +1,23 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+    <div class="sheet">
+        <textarea name="system.description">{{item.system.description}}</textarea>
+        <table class = "statslist">
+            <tr>
+                <td>Stat</td>
+                <td>Tier</td>
+            </tr>
+            {{#each item.system.stats}}
+            {{#if this.selected}}
+            <tr>
+                <td>{{@key}}</td>
+                <td><input name="system.stats.{{@key}}.tier" value="{{this.tier}}"></td>
+                <td><a class="fas fa-x removestat" data-key="{{@key}}"></a></td>
+            </tr>
+            {{/if}}
+            {{/each}}
+        </table>
+    </div>
+    {{#unless item.system.allselected}}
+    <a class="fas fa-plus addstat"></a>
+    {{/unless}}
+</form>
