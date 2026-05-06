@@ -1,0 +1,43 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+    <div class="sheet">
+        <textarea name="system.description">{{item.system.description}}</textarea>
+        <table>
+            <tr>
+                <th colspan="6">Lineage Base Traits</th>
+            </tr>
+            <tr>
+                <td>Body</td>
+                <td>Grace</td>
+                <td>Wits</td>
+                <td>Luck</td>
+                <td>Mind</td>
+                <td>Soul</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="system.traits.body" value="{{item.system.traits.body}}"></td>
+                <td><input type="number" name="system.traits.grace" value="{{item.system.traits.grace}}"></td>
+                <td><input type="number" name="system.traits.wits" value="{{item.system.traits.wits}}"></td>
+                <td><input type="number" name="system.traits.luck" value="{{item.system.traits.luck}}"></td>
+                <td><input type="number" name="system.traits.mind" value="{{item.system.traits.mind}}"></td>
+                <td><input type="number" name="system.traits.soul" value="{{item.system.traits.soul}}"></td>
+            </tr>
+        </table>
+        <div>Lineage Skills</div>
+            <ul>
+                {{#each item.system.skills}}
+                {{#if this}}
+                <li>{{@key}} <a class="fas fa-x removeskill" data-key="{{@key}}"></a></li>
+                {{/if}}
+                {{/each}}
+                {{#unless item.system.allselected}}
+                <li>
+                    <a class="fas fa-plus addskill"></a>
+                </li>
+                {{/unless}}
+            </ul>
+        <div>Lineage Feat</div>
+        <a class="fas fa-plus"></a>
+        <textarea name="system.perk">{{item.system.perk}}</textarea>
+        </div>
+
+</form>

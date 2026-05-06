@@ -1,6 +1,7 @@
 //import mysystem from "./modules/config.js";
 import charactersheet from "./modules/sheets/charactersheet.js";
 import equipmentsheet from "./modules/sheets/equipment.js";
+import lineagesheet from "./modules/sheets/lineage.js";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -25,10 +26,15 @@ Hooks.once("init", function () {
   // });
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("mysystem", equipmentsheet, { 
+  Items.registerSheet("atlara", equipmentsheet, { 
     types: ["equipment"], 
     makeDefault: true
   })
+  Items.registerSheet("atlara", lineagesheet), {
+    types: ["lineage", "archetype"],
+    makeDefault: true
+  }
+  
 
 
   // Define custom Document classes

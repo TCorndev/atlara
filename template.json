@@ -139,7 +139,10 @@
             "arts",
             "crafts",
             "tongues",
-            "path"
+            "path",
+            "archetype",
+            "lineage",
+            "power"
             ],
         "templates": {
             "base": {
@@ -202,6 +205,68 @@
                 "slot": "",
                 "allselected": false,
                 "equipped": false
+            },
+            "lineagedata": {
+                "traits": {
+                    "body": 4,
+                    "grace": 4,
+                    "wits": 4,
+                    "luck": 4,
+                    "mind": 4,
+                    "soul": 4
+                },
+                "feat": [],
+                "perk": "Enter a park unique to this lineage"
+            },
+            "archetypedata": {
+                "health": 4,
+                "destiny": 4,
+                "feat": [],
+                "path": {
+                    "destruction": 0,
+                    "protection": 0,
+                    "alteration": 0,
+                    "restoration": 0,
+                    "obfuscation": 0,
+                    "divination": 0,
+                    "conjuration": 0,
+                    "abjuration": 0,
+                    "enervation": 0,
+                    "veneration": 0
+                },
+                "feattypes": {
+
+                }
+            },
+            "skillbonus": {
+                "skills": {
+                    "warfare": false,
+                    "cunning": false,
+                    "esoterica": false,
+                    "athletics": false,
+                    "survival": false,
+                    "knowledge": false,
+                    "aptitude": false,
+                    "creativity": false,
+                    "diplomacy": false
+                },
+                "allselected": false
+            },
+            "traitbonus": {
+                "traits": {
+                    "body": false,
+                    "grace": false,
+                    "wits": false,
+                    "luck": false,
+                    "mind": false,
+                    "soul": false
+                }
+            },
+            "featdata": {
+
+            },
+            "power": {
+
             }
         },
         "item": {
@@ -209,6 +274,18 @@
         },
         "equipment": {
             "templates": ["base", "equipmentdata"]
+        },
+        "lineage": {
+            "templates": ["base", "lineagedata", "skillbonus"]
+        },
+        "archetype": {
+            "templates": ["base", "archetypedata, skillbonus, traitsbonus"]
+        },
+        "feat": {
+            "templates": ["featdata"]
+        },
+        "power": {
+            "templates": ["powerdata"]
         }
     }
 }
