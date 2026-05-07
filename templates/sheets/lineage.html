@@ -26,12 +26,12 @@
             <ul>
                 {{#each item.system.skills}}
                 {{#if this}}
-                <li>{{@key}} <a class="fas fa-x removeskill" data-key="{{@key}}"></a></li>
+                <li>{{@key}} <a class="fas fa-x removeskill" data-key="{{@key}}" data-type="skills"></a></li>
                 {{/if}}
                 {{/each}}
-                {{#unless item.system.allselected}}
+                {{#unless item.system.skillsallselected}}
                 <li>
-                    <a class="fas fa-plus addskill"></a>
+                    <a class="fas fa-plus addskill" data-type="skills"></a>
                 </li>
                 {{/unless}}
             </ul>

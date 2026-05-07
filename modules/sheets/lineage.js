@@ -12,6 +12,7 @@ export default class lineagesheet extends foundry.appv1.sheets.ItemSheet {
         super.activateListeners(html);
         html.find(".addskill").on("click", this.addSkill.bind(this));
         html.find(".removeskill").on("click", this.removeSkill.bind(this));
+        html.find(".destinypath").on("change", this.setPath.bind(this));
     }
     async addSkill(event){
         event.preventDefault()
@@ -20,7 +21,10 @@ export default class lineagesheet extends foundry.appv1.sheets.ItemSheet {
             this.dialog.bringToTop();
             return;
         }
-        const skills = this.item.system.skills;
+        const type = event.currentTarget.dataset.type
+        const skills = this.item.system[type];
+        const allselected = type + "allselected"
+        console.log(this.item.system[allselected])
         const html =  await renderTemplate(
             "systems/atlara/templates/partials/add-skillbonus.hbs",
             {
@@ -28,17 +32,17 @@ export default class lineagesheet extends foundry.appv1.sheets.ItemSheet {
             }
         )
         this.dialog = new Dialog({
-            title: "Add Skill",
+            title: "Add " + type,
             content: html,
             buttons: {
                 submit: {
                     callback: async (html) => {
                         const selection = html.find(".selection").val();
                         skills[selection] = true
-                        const allSelected = Object.values(skills).every(s => s)
+                        const selected = Object.values(skills).every(s => s)
                         await this.item.update({
-                            [`system.skills.${selection}`]: true,
-                            "system.allselected": allSelected
+                            [`system.${type}.${selection}`]: true,
+                            [`system.${allselected}`]: selected
                         })
                     },
                     label: "Add"
@@ -55,10 +59,18 @@ export default class lineagesheet extends foundry.appv1.sheets.ItemSheet {
     }
     async removeSkill(event){
         event.preventDefault()
+        console.log(event)
+        const type = event.currentTarget.dataset.type;
         const skill = event.currentTarget.dataset.key;
+        const allselected = type + "allselected"
         await this.item.update({
-            [`system.skills.${skill}`]: false,
-            "system.allselected": false
+            [`system.${type}.${skill}`]: false,
+            [`system.${allselected}`]: false
         })
+    }
+    async setPath(event){
+        event.preventDefault()
+        console.log(event.currentTarget.value)
+        console.log(event.currentTarget.dataset.num)
     }
 }

@@ -1,3 +1,100 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-<div class="sheet"></div>
+<div class="sheet">
+    <div>
+        <textarea name="system.description">{{item.system.description}}</textarea>
+    </div>
+    <div>Trait bonus</div>
+    <ul>
+        {{#each item.system.traits}}
+        {{#if this}}
+        <li>{{@key}} <a class="fas fa-x removeskill" data-key="{{@key}}" data-type="traits"></a></li>
+        {{/if}}
+        {{/each}}
+        {{#unless item.system.traitsallselected}}
+        <li>
+            <a class="fas fa-plus addskill" data-type="traits"></a>
+        </li>
+        {{/unless}}
+    </ul>
+    <div>Archetype skills</div>
+        <ul>
+            {{#each item.system.skills}}
+            {{#if this}}
+            <li>{{@key}} <a class="fas fa-x removeskill" data-key="{{@key}}" data-type="skills"></a></li>
+            {{/if}}
+            {{/each}}
+            {{#unless item.system.skillsallselected}}
+            <li>
+                <a class="fas fa-plus addskill" data-type="skills"></a>
+            </li>
+            {{/unless}}
+        </ul>
+    <div>Archetype feat</div>
+    <a class="fas fa-plus"></a>
+    <table>
+        <tr>
+            <th colspan="5">Destiny Path</th>
+        </tr>
+        <tr>
+            <td>
+                <select class="destinypath" data-num="1">
+                    <option value="nothing">None</option>
+                    {{#each item.system.path}}
+                    {{#unless this}}
+                    <option value="{{@key}}">{{@key}}</option>
+                    {{/unless}}
+                    {{/each}}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select class="destinypath" data-num="2">
+                    <option value="nothing">None</option>
+                    {{#each item.system.path}}
+                    {{#unless this}}
+                    <option value="{{@key}}">{{@key}}</option>
+                    {{/unless}}
+                    {{/each}}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select class="destinypath" data-num="3">
+                    <option value="nothing">None</option>
+                    {{#each item.system.path}}
+                    {{#unless this}}
+                    <option value="{{@key}}">{{@key}}</option>
+                    {{/unless}}
+                    {{/each}}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select class="destinypath" data-num="4">
+                    <option value="nothing">None</option>
+                    {{#each item.system.path}}
+                    {{#unless this}}
+                    <option value="{{@key}}">{{@key}}</option>
+                    {{/unless}}
+                    {{/each}}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select class="destinypath" data-num="5">
+                    <option value="nothing">None</option>
+                    {{#each item.system.path}}
+                    {{#unless this}}
+                    <option value="{{@key}}">{{@key}}</option>
+                    {{/unless}}
+                    {{/each}}
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>
 </form>
