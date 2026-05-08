@@ -37,64 +37,55 @@
         </tr>
         <tr>
             <td>
-                <select class="destinypath" data-num="1">
-                    <option value="nothing">None</option>
-                    {{#each item.system.path}}
-                    {{#unless this}}
-                    <option value="{{@key}}">{{@key}}</option>
-                    {{/unless}}
+                <select name="system.path.step.stepone" class="destinypath" data-num="one">
+                    <option value="">None</option>
+                    {{#each item.system.path.types}}
+                    <option value="{{@key}}" {{#if (eq @key ../this.item.system.path.step.stepone)}} selected {{/if}}>{{@key}}</option>
                     {{/each}}
                 </select>
             </td>
         </tr>
         <tr>
             <td>
-                <select class="destinypath" data-num="2">
-                    <option value="nothing">None</option>
-                    {{#each item.system.path}}
-                    {{#unless this}}
-                    <option value="{{@key}}">{{@key}}</option>
-                    {{/unless}}
+                <select name="system.path.step.steptwo" class="destinypath" data-num="two">
+                    <option value="">None</option>
+                    {{#each item.system.path.types}}
+                    <option value="{{@key}}" {{#if (eq @key ../this.item.system.path.step.steptwo)}} selected {{/if}}>{{@key}}</option>
                     {{/each}}
                 </select>
             </td>
         </tr>
         <tr>
             <td>
-                <select class="destinypath" data-num="3">
-                    <option value="nothing">None</option>
-                    {{#each item.system.path}}
-                    {{#unless this}}
-                    <option value="{{@key}}">{{@key}}</option>
-                    {{/unless}}
+                <select name="system.path.step.stepthree" class="destinypath" data-num="three">
+                    <option value="">None</option>
+                    {{#each item.system.path.types}}
+                    <option value="{{@key}}" {{#if (eq @key ../this.item.system.path.step.stepthree)}} selected {{/if}}>{{@key}}</option>
                     {{/each}}
                 </select>
             </td>
         </tr>
         <tr>
             <td>
-                <select class="destinypath" data-num="4">
-                    <option value="nothing">None</option>
-                    {{#each item.system.path}}
-                    {{#unless this}}
-                    <option value="{{@key}}">{{@key}}</option>
-                    {{/unless}}
+                <select name="system.path.step.stepfour" class="destinypath" data-num="four">
+                    <option value="">None</option>
+                    {{#each item.system.path.types}}
+                    <option value="{{@key}}" {{#if (eq @key ../this.item.system.path.step.stepfour)}} selected {{/if}}>{{@key}}</option>
                     {{/each}}
                 </select>
             </td>
         </tr>
         <tr>
             <td>
-                <select class="destinypath" data-num="5">
-                    <option value="nothing">None</option>
-                    {{#each item.system.path}}
-                    {{#unless this}}
-                    <option value="{{@key}}">{{@key}}</option>
-                    {{/unless}}
+                <select name="system.path.step.stepfive" class="destinypath" data-num="five">
+                    <option value="">None</option>
+                    {{#each item.system.path.types}}
+                    <option value="{{@key}}" {{#if (eq @key ../this.item.system.path.step.stepfive)}} selected {{/if}}>{{@key}}</option>
                     {{/each}}
                 </select>
             </td>
         </tr>
     </table>
+    <button class="showitem">test button</button>
 </div>
 </form>

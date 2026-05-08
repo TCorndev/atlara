@@ -223,11 +223,13 @@
                 "destiny": 4,
                 "feat": [],
                 "path": {
-                    "stepone": "none",
-                    "steptwo": "none",
-                    "stepthree": "none",
-                    "stepfour": "none",
-                    "stepfive": "none",
+                    "step": {
+                        "stepone": "",
+                        "steptwo": "",
+                        "stepthree": "",
+                        "stepfour": "",
+                        "stepfive": ""
+                    },
                     "types": {
                         "destruction": false,
                         "protection": false,
