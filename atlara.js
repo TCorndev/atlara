@@ -2,6 +2,7 @@
 import charactersheet from "./modules/sheets/charactersheet.js";
 import equipmentsheet from "./modules/sheets/equipment.js";
 import lineagesheet from "./modules/sheets/lineage.js";
+import altaraactor from "./modules/altaraactor.js"
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -15,6 +16,15 @@ Hooks.once("init", function () {
   const Items =  foundry.documents.collections.Items; //check if necessary
   const Actors = foundry.documents.collections.Actors;
   const ItemSheet = foundry.appv1.sheets.ItemSheet;
+  
+  // Define custom Document classes
+  CONFIG.Actor.documentClass = altaraactor
+  
+  // Active Effects are never copied to the Actor,
+  // but will still apply to the Actor from within the Item
+  // if the transfer property on the Active Effect is true.
+
+  // Register sheet application classes
   Actors.unregisterSheet("core", Actors);
   Actors.registerSheet("atlara", charactersheet, { 
     types: ["character"], 
@@ -24,7 +34,6 @@ Hooks.once("init", function () {
   //   types: ["monster"], 
   //   makeDefault: true
   // });
-
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("atlara", equipmentsheet, { 
     types: ["equipment"], 
@@ -34,17 +43,6 @@ Hooks.once("init", function () {
     types: ["lineage", "archetype"],
     makeDefault: true
   }
-  
-
-
-  // Define custom Document classes
-
-  // Active Effects are never copied to the Actor,
-  // but will still apply to the Actor from within the Item
-  // if the transfer property on the Active Effect is true.
-
-  // Register sheet application classes
-
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });

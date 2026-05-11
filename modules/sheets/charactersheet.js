@@ -9,6 +9,42 @@ export default class charactersheet extends foundry.appv1.sheets.ActorSheet {
         html.find(".skillroll").on("click", this.skillroll.bind(this))
         html.find(".equip-toggle").on("click", this.equipToggle.bind(this))
         html.find(".display-item").on("click", this.displayItem.bind(this))
+        html.find(".removeitem").on("click", this.removeItem.bind(this))
+        html.find(".trait").on("click", this.displayTrait.bind(this))
+    }
+    prepareDerivedData() {
+    
+        super.prepareDerivedData();
+        console.log("hello")
+        const system = this.system;
+        const lineage = this.actor.items.find(i => i.type === "lineage")
+        const archetype = this.actor.items.find(i => i.type === "archetype")
+        
+        for (const trait of system.traits){
+            trait.max = 5 + system.tier
+            trait.lineage = lineage[trait]
+            if (archetype.traitbonus[trait]){
+                trait.archetype = 1
+            }
+            else {
+                trait.archetype = 0
+            }
+            trait.total = Math.min(trait.max, trait.lineage + trait.archetype + trait.feat + trait.level)
+            console.log(trait)
+        }
+
+    }
+    getData() {
+        const context = super.getData();
+
+        context.items = {
+            equipment: this.actor.items.filter(i => i.type === "equipment"),
+            lineage: this.actor.items.find(i => i.type === "lineage"),
+            archetype: this.actor.items.find(i => i.type === "archetype"),
+            feats: this.actor.items.filter(i => i.type === "feat"),
+            powers: this.actor.items.filter(i => i.type === "power")
+        };
+        return context;
     }
     getBonus(skill)
     {
@@ -23,6 +59,7 @@ export default class charactersheet extends foundry.appv1.sheets.ActorSheet {
     }
     async drop(event)
     {
+        console.log(event.currentTarget)
         event.preventDefault();
 
     }
@@ -93,5 +130,21 @@ export default class charactersheet extends foundry.appv1.sheets.ActorSheet {
     {
         event.preventDefault();
         this.actor.items.get(event.currentTarget.dataset.item).sheet.render(true);
+    }
+    async removeItem(event)
+    {
+        event.preventDefault()
+        const id = event.currentTarget.dataset.item
+        await this.actor.deleteEmbeddedDocuments("Item", [id]);
+    }
+    async displayTrait(event)
+    {
+        event.preventDefault();
+        if (this.dialog) {
+            console.log("Already opened")
+            this.dialog.bringToTop();
+            return;
+        }
+        console.log(event.currentTarget())
     }
 }

@@ -9,51 +9,82 @@
                 "name": "name",
                 "merit": "merit",
                 "level": 1,
-                "lineage": "lineage",
                 "flaw": "flaw",
-                "tier": "tier",
-                "archetype": "archetype",
+                "tier": 1,
                 "ethos": "ethos",
                 "title": "title"
             },
             "traits": {
                 "body": {
-                    "base": 1,
-                    "bonus": 0
+                    "max": 6,
+                    "archetype": 0,
+                    "lineage": 0,
+                    "feat": 0,
+                    "bonus": 0,
+                    "level": 0,
+                    "total": 0
                 },
                 "grace": {
-                    "base": 1,
-                    "bonus": 0
+                    "max": 6,
+                    "archetype": 0,
+                    "lineage": 0,
+                    "feat": 0,
+                    "bonus": 0,
+                    "level": 0,
+                    "total": 0
                 },
                 "wits": {
-                    "base": 1,
-                    "bonus": 0
+                    "max": 6,
+                    "archetype": 0,
+                    "lineage": 0,
+                    "feat": 0,
+                    "bonus": 0,
+                    "level": 0,
+                    "total": 0
                 },
                 "luck": {
-                    "base": 1,
-                    "bonus": 0
+                    "max": 6,
+                    "archetype": 0,
+                    "lineage": 0,
+                    "feat": 0,
+                    "bonus": 0,
+                    "level": 0,
+                    "total": 0
                 },
                 "mind": {
-                    "base": 1,
-                    "bonus": 0
+                    "max": 6,
+                    "archetype": 0,
+                    "lineage": 0,
+                    "feat": 0,
+                    "bonus": 0,
+                    "level": 0,
+                    "total": 0
                 },
                 "soul": {
-                    "base": 1,
-                    "bonus": 0
+                    "max": 6,
+                    "archetype": 0,
+                    "lineage": 0,
+                    "feat": 0,
+                    "bonus": 0,
+                    "level": 0,
+                    "total": 0
                 }
             },
             "thresholds": {
                 "physique": {
                     "base": 1,
-                    "bonus": 0
+                    "bonus": 0,
+                    "difficulty": 1
                 },
                 "avoidance": {
                     "base": 1,
-                    "bonus": 0
+                    "bonus": 0,
+                    "difficulty": 1
                 },
                 "discipline": {
                     "base": 1,
-                    "bonus": 0                 
+                    "bonus": 0 ,
+                    "difficulty": 1                
                 }
             },
             "qualities": {
@@ -276,7 +307,18 @@
                 "traitsallselected": false
             },
             "featdata": {
-
+                "type": "base",
+                "bonus": {
+                    "body": 0,
+                    "grace": 0,
+                    "wits": 0,
+                    "luck": 0,
+                    "mind": 0,
+                    "soul": 0,
+                    "physique": 0,
+                    "avoidance": 0,
+                    "discipline": 0
+                }
             },
             "power": {
 
@@ -295,7 +337,7 @@
             "templates": ["base", "archetypedata", "skillbonus", "traitbonus"]
         },
         "feat": {
-            "templates": ["featdata"]
+            "templates": ["base", "featdata"]
         },
         "power": {
             "templates": ["powerdata"]

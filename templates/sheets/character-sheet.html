@@ -16,7 +16,9 @@
                 </tr>
                 <tr>
                     <td>Lineage</td>
-                    <td><input name="system.details.lineage" value="{{actor.system.details.lineage}}"></td>
+                    <td class="item display-item">
+                        {{items.lineage.name}}
+                        </td>
                     <td>Flaw</td>
                     <td><input name="system.details.flaw" value="{{actor.system.details.flaw}}"></td>
                     <td>Tier</td>
@@ -24,7 +26,7 @@
                 </tr>
                 <tr>
                     <td>Archetype</td>
-                    <td><input name="system.details.archetype" value="{{actor.system.details.archetype}}"></td>
+                    <td class="item display-item">{{items.archetype.name}}</td>
                     <td>Ethos</td>
                     <td><input name="system.details.ethos" value="{{actor.system.details.ethos}}"></td>
                     <td>Title</td>
@@ -46,12 +48,9 @@
                     <td>Soul</td>
                 </tr>
                 <tr>
-                    <td><input type="number" name="system.traits.body.base" value="{{actor.system.traits.body.base}}"></td>
-                    <td><input type="number" name="system.traits.grace.base" value="{{actor.system.traits.grace.base}}"></td>
-                    <td><input type="number" name="system.traits.wits.base" value="{{actor.system.traits.wits.base}}"></td>
-                    <td><input type="number" name="system.traits.luck.base" value="{{actor.system.traits.luck.base}}"></td>
-                    <td><input type="number" name="system.traits.mind.base" value="{{actor.system.traits.mind.base}}"></td>
-                    <td><input type="number" name="system.traits.soul.base" value="{{actor.system.traits.soul.base}}"></td>
+                    {{#each actor.system.traits}}
+                    <td class="trait" value="{{this}}">{{this.total}}</td>
+                    {{/each}}
                 </tr>
             </table>
         </div>
@@ -159,9 +158,9 @@
                     <th>Resources</th>
                 </tr>
                 <tr>
-                    <td class="inventory" style="background-color:pink"><ul >
-                        {{#each actor.items}}
-                            <li><span class="display-item" data-item="{{this.id}}">{{this.name}}</span> <input type="checkbox" class="equip-toggle" data-item="{{this._id}}" {{#if this.system.equipped}} checked {{/if}} ></li>
+                    <td class="inventory item-list" style="background-color:pink"><ul >
+                        {{#each items.equipment}}
+                            <li><a class="fas fa-x removeitem" data-item="{{this.id}}"></a><span class="display-item item" data-item="{{this.id}}">{{this.name}}</span> <input type="checkbox" class="equip-toggle" data-item="{{this._id}}" {{#if this.system.equipped}} checked {{/if}} ></li>
                         {{/each}}
                         </ul>
                     </td>
