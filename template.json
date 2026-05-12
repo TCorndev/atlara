@@ -14,6 +14,28 @@
                 "ethos": "ethos",
                 "title": "title"
             },
+            "levelup": {
+                "skillpoints": {
+                    "points": 0,
+                    "invested": 0,
+                    "ready": false
+                },
+                "traitpoints": {
+                    "points": 0,
+                    "invested": 0,
+                    "ready": false
+                },
+                "featpoints": {
+                    "points": 0,
+                    "invested": 0,
+                    "ready": false
+                },
+                "talentpoints": {
+                    "points": 0,
+                    "invested": 0,
+                    "ready": false
+                }
+            },
             "traits": {
                 "body": {
                     "max": 6,
@@ -94,56 +116,101 @@
                 "warfare": {
                     "die": 4,
                     "trait": "body",
+                    "difficulty": 1,
+                    "max": 5,
+                    "base": 1,
+                    "feat": 0,
                     "bonus": 0,
-                    "difficulty": 1
+                    "level": 0,
+                    "total": 0
                 },
                 "cunning": {
                     "die": 4,
                     "trait": "wits",
+                    "difficulty": 1,
+                    "max": 5,
+                    "base": 1,
+                    "feat": 0,
                     "bonus": 0,
-                    "difficulty": 1
+                    "level": 0,
+                    "total": 0
                 },
                 "esoterica": {
                     "die": 4,
                     "trait": "mind",
+                    "difficulty": 1,
+                    "max": 5,
+                    "base": 1,
+                    "feat": 0,
                     "bonus": 0,
-                    "difficulty": 1
+                    "level": 0,
+                    "total": 0
                 },
                 "athletics": {
                     "die": 4,
                     "trait": "body",
+                    "difficulty": 1,
+                    "max": 5,
+                    "base": 1,
+                    "feat": 0,
                     "bonus": 0,
-                    "difficulty": 1
+                    "level": 0,
+                    "total": 0
                 },
                 "survival": {
                     "die": 4,
                     "trait": "wits",
+                    "difficulty": 1,
+                    "max": 5,
+                    "base": 1,
+                    "feat": 0,
                     "bonus": 0,
-                    "difficulty": 1
+                    "level": 0,
+                    "total": 0
                 },
                 "knowledge": {
                     "die": 4,
                     "trait": "mind",
+                    "difficulty": 1,
+                    "max": 5,
+                    "base": 1,
+                    "feat": 0,
                     "bonus": 0,
-                    "difficulty": 1
+                    "level": 0,
+                    "total": 0
                 },
                 "aptitude": {
                     "die": 4,
                     "trait": "mind",
+                    "difficulty": 1,
+                    "max": 5,
+                    "base": 1,
+                    "feat": 0,
                     "bonus": 0,
-                    "difficulty": 1
+                    "level": 0,
+                    "total": 0
                 },
                 "creativity": {
                     "die": 4,
                     "trait": "soul",
+                    "difficulty": 1,
+                    "max": 5,
+                    "base": 1,
+                    "feat": 0,
                     "bonus": 0,
-                    "difficulty": 1
+                    "level": 0,
+                    "total": 0
                 },
                 "diplomacy": {
                     "die": 4,
                     "trait": "soul",
+                    "difficulty": 1,
+                    "max": 5,
+                    "base": 1,
+                    "feat": 0,
                     "bonus": 0,
-                    "difficulty": 1
+                    "level": 0,
+                    "total": 0
                 }
             },
             "conditions":{

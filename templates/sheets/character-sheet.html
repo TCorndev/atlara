@@ -16,17 +16,23 @@
                 </tr>
                 <tr>
                     <td>Lineage</td>
-                    <td class="item display-item">
-                        {{items.lineage.name}}
-                        </td>
+                    {{#if items.lineage}}
+                    <td><span class="item display-item" data-item="{{items.lineage.id}}">{{items.lineage.name}}</span><a class="fas fa-x removeitem" data-item="{{items.lineage.id}}"></a></td>
+                    {{else}}
+                    <td></td>
+                    {{/if}}
                     <td>Flaw</td>
                     <td><input name="system.details.flaw" value="{{actor.system.details.flaw}}"></td>
                     <td>Tier</td>
-                    <td><input name="system.details.tier" value="{{actor.system.details.tier}}"></td>
+                    <td>{{actor.system.details.tier}}</td>
                 </tr>
                 <tr>
                     <td>Archetype</td>
-                    <td class="item display-item">{{items.archetype.name}}</td>
+                    <td>
+                        {{#if items.archetype}}
+                        <span class="item display-item" data-item="{{items.archetype.id}}">{{items.archetype.name}}</span><a class="fas fa-x removeitem" data-item="{{items.archetype.id}}"></a>
+                        {{/if}}
+                    </td>
                     <td>Ethos</td>
                     <td><input name="system.details.ethos" value="{{actor.system.details.ethos}}"></td>
                     <td>Title</td>
@@ -50,6 +56,15 @@
                 <tr>
                     {{#each actor.system.traits}}
                     <td class="trait" value="{{this}}">{{this.total}}</td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    {{#each traitlevelup}}
+                    <td>
+                        {{#if this}}
+                        <button class="levelup" data-target="{{@key}}" data-type="trait"><i class="fas fa-arrow-up"></i></button>
+                        {{/if}}
+                    </td>
                     {{/each}}
                 </tr>
             </table>
@@ -102,13 +117,10 @@
                         </select>
                     </td>
                     <td>        
-                        <select name="system.skills.{{@key}}.die">
-                            <option value="4" {{#if (eq this.die "4")}}selected{{/if}}>d4</option>
-                            <option value="6" {{#if (eq this.die "6")}}selected{{/if}}>d6</option>
-                            <option value="8" {{#if (eq this.die "8")}}selected{{/if}}>d8</option>
-                            <option value="10" {{#if (eq this.die "10")}}selected{{/if}}>d10</option>
-                            <option value="12" {{#if (eq this.die "12")}}selected{{/if}}>d12</option>
-                        </select>
+                        d{{this.die}}
+                        {{#if (lookup ../skilllevelup @key)}}
+                            <button class="levelup" data-target="{{@key}}" data-type="skill"><i class="fas fa-arrow-up"></i></button>
+                        {{/if}}                    
                     </td>
                     <td><input type="number" name="system.skills.{{@key}}.difficulty" value="{{this.difficulty}}" style="width: 40px"></td>
                 </tr>
