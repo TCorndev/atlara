@@ -7,6 +7,7 @@ export default class altaraactor extends Actor {
         system.details.tier = Math.ceil(system.details.level/3)
         this.setTraitsAndSkills(system)
         this.setLevelBonus(system)
+        this.setThresholds(system)
     }
     setTraitsAndSkills(system) {
         const lineage = this.items.find(i => i.type === "lineage")
@@ -52,5 +53,27 @@ export default class altaraactor extends Actor {
             }
         }
         console.log(system.levelup)
+    }
+    //There's probably a better way to do this, but should dynamically update thresholds based on stats
+    setThresholds(system){
+        const physique = system.thresholds.physique
+        const avoidance = system.thresholds.avoidance
+        const discipline = system.thresholds.discipline
+        const traits = system.traits
+        
+        physique.body = traits.body.total
+        physique.grace = traits.grace.total
+        physique.total = physique.body + physique.grace + physique.bonus
+        physique.difficulty = Math.ceil(physique.total / 3)
+
+        avoidance.wits = traits.wits.total
+        avoidance.luck = traits.luck.total
+        avoidance.total = avoidance.wits + avoidance.luck + avoidance.bonus
+        avoidance.difficulty = Math.ceil(avoidance.total / 3)
+
+        discipline.mind = traits.mind.total
+        discipline.soul = traits.soul.total
+        discipline.total = discipline.mind + discipline.soul + discipline.bonus
+        discipline.difficulty = Math.ceil(discipline.total / 3)
     }
 }

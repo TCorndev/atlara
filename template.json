@@ -94,18 +94,24 @@
             },
             "thresholds": {
                 "physique": {
-                    "base": 1,
+                    "body": 0,
+                    "grace": 0,
                     "bonus": 0,
+                    "total": 0,
                     "difficulty": 1
                 },
                 "avoidance": {
-                    "base": 1,
+                    "wits": 0,
+                    "luck": 0,
                     "bonus": 0,
+                    "total": 0,
                     "difficulty": 1
                 },
                 "discipline": {
-                    "base": 1,
-                    "bonus": 0 ,
+                    "mind": 0,
+                    "soul": 0,
+                    "bonus": 0,
+                    "total": 0,
                     "difficulty": 1                
                 }
             },
