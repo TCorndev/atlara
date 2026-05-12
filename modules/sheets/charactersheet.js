@@ -138,19 +138,35 @@ export default class charactersheet extends foundry.appv1.sheets.ActorSheet {
     async displayTrait(event)
     {
         event.preventDefault();
+        const title = event.currentTarget.dataset.trait
+        const trait = this.actor.system.traits[title]
         if (this.dialog) {
             console.log("Already opened")
             this.dialog.bringToTop();
             return;
         }
-        console.log(event.currentTarget())
+        console.log(trait)
+        const html = await renderTemplate(
+            "systems/atlara/templates/partials/trait-info.hbs",
+            {
+                trait,
+                name: title
+            }
+        )
+        this.dialog = new Dialog({
+            title: title.charAt(0).toUpperCase() + title.slice(1),
+            content: html,
+            buttons: {},
+            close: () => {
+                this.dialog = null;
+            }
+        })
+        this.dialog.render(true)
     }
     //this should work for skills and traits
     async levelUp(event)
     {
         event.preventDefault();
-        console.log(event)
-        console.log("Leveling " + event.currentTarget.dataset.type + ": " + event.currentTarget.dataset.target)
         const type = event.currentTarget.dataset.type + "s"
         const points = event.currentTarget.dataset.type + "points"
         const target = event.currentTarget.dataset.target

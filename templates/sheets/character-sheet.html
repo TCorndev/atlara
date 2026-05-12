@@ -55,7 +55,7 @@
                 </tr>
                 <tr>
                     {{#each actor.system.traits}}
-                    <td class="trait" value="{{this}}">{{this.total}}</td>
+                    <td class="trait" data-trait="{{@key}}">{{this.total}}</td>
                     {{/each}}
                 </tr>
                 <tr>
