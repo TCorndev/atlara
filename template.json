@@ -394,7 +394,66 @@
                 }
             },
             "power": {
-
+                "cost": 1,
+                "period": {
+                    "instant": true,
+                    "moment": false,
+                    "scenario": false,
+                    "endeavor": false,
+                    "adventure": false,
+                    "indefinite": false
+                },
+                "range": {
+                    "self": true,
+                    "touch": false,
+                    "breath": false,
+                    "hearing": false,
+                    "sight": false,
+                    "thought": false,
+                    "blood": false,
+                    "shadow": false,
+                    "dream": false,
+                    "name": false
+                },
+                "domain": {
+                    "target": true,
+                    "volley": false,
+                    "chain": false,
+                    "aura": false,
+                    "line": false,
+                    "cone": false,
+                    "nova": false,
+                    "zone": false,
+                    "locale": false,
+                    "region": false,
+                    "world": false
+                },
+                "effect": "",
+                "trait": {
+                    "body": false,
+                    "grace": false,
+                    "wits": false,
+                    "luck": false,
+                    "mind": true,
+                    "soul": false
+                },
+                "skill": {
+                    "warfare": false,
+                    "cunning": false,
+                    "esoterica": true,
+                    "athletics": false,
+                    "survival": false,
+                    "knowledge": false,
+                    "aptitude": false,
+                    "creativity": false,
+                    "diplomacy": false
+                },
+                "resist": {
+                    "none": true,
+                    "physique": false,
+                    "avoidance": false,
+                    "discipline": false
+                }
             }
         },
         "item": {
@@ -412,8 +471,11 @@
         "feat": {
             "templates": ["base", "featdata"]
         },
+        "path": {
+            "templates": ["base"]
+        },
         "power": {
-            "templates": ["powerdata"]
+            "templates": ["base","powerdata"]
         }
     }
 }

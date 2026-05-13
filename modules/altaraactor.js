@@ -28,7 +28,6 @@ export default class altaraactor extends Actor {
             skill.total = Math.min(skill.max, skill.base + skill.feat + skill.bonus + skill.level)
             skill.die = 2 + (skill.total * 2)
         }
-        console.log(system.skills)
     }
     //update feats and talents in the future
     setLevelBonus(system){
@@ -52,7 +51,6 @@ export default class altaraactor extends Actor {
                 type.ready = true;
             }
         }
-        console.log(system.levelup)
     }
     //There's probably a better way to do this, but should dynamically update thresholds based on stats
     setThresholds(system){
