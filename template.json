@@ -4,6 +4,238 @@
             "character",
             "monster"
         ],
+        "templates": {
+            "traitsdata":{
+                "traits": {
+                    "body": {
+                        "max": 6,
+                        "archetype": 0,
+                        "lineage": 0,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "grace": {
+                        "max": 6,
+                        "archetype": 0,
+                        "lineage": 0,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "wits": {
+                        "max": 6,
+                        "archetype": 0,
+                        "lineage": 0,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "luck": {
+                        "max": 6,
+                        "archetype": 0,
+                        "lineage": 0,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "mind": {
+                        "max": 6,
+                        "archetype": 0,
+                        "lineage": 0,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "soul": {
+                        "max": 6,
+                        "archetype": 0,
+                        "lineage": 0,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    }
+                }
+            },
+            "thresholdsdata":{
+                "thresholds": {
+                    "physique": {
+                        "body": 0,
+                        "grace": 0,
+                        "bonus": 0,
+                        "total": 0,
+                        "difficulty": 1
+                    },
+                    "avoidance": {
+                        "wits": 0,
+                        "luck": 0,
+                        "bonus": 0,
+                        "total": 0,
+                        "difficulty": 1
+                    },
+                    "discipline": {
+                        "mind": 0,
+                        "soul": 0,
+                        "bonus": 0,
+                        "total": 0,
+                        "difficulty": 1                
+                    }
+                }
+            },
+            "skillsdata":{
+                "skills":{
+                    "athletics": {
+                        "die": 4,
+                        "trait": "body",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "warfare": {
+                        "die": 4,
+                        "trait": "body",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "acrobatics": {
+                        "die": 4,
+                        "trait": "grace",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "cunning": {
+                        "die": 4,
+                        "trait": "grace",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "aptitude": {
+                        "die": 4,
+                        "trait": "wits",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "survival": {
+                        "die": 4,
+                        "trait": "wits",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "creativity": {
+                        "die": 4,
+                        "trait": "luck",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "fortune": {
+                        "die": 4,
+                        "trait": "luck",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "esoterica": {
+                        "die": 4,
+                        "trait": "mind",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "knowledge": {
+                        "die": 4,
+                        "trait": "mind",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "diplomacy": {
+                        "die": 4,
+                        "trait": "soul",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    },
+                    "intuition": {
+                        "die": 4,
+                        "trait": "soul",
+                        "difficulty": 1,
+                        "max": 5,
+                        "base": 1,
+                        "feat": 0,
+                        "bonus": 0,
+                        "level": 0,
+                        "total": 0
+                    }
+                }
+            },
+            "conditionsdata":{
+                "conditions":{
+                    "health":{
+                        "hp": 4,
+                        "wounds": 0
+                    },
+                    "destiny":{
+                        "cards": 4
+                    }
+                }
+            }
+        },
         "character": {
             "details": {
                 "name": "name",
@@ -36,202 +268,13 @@
                     "ready": false
                 }
             },
-            "traits": {
-                "body": {
-                    "max": 6,
-                    "archetype": 0,
-                    "lineage": 0,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "grace": {
-                    "max": 6,
-                    "archetype": 0,
-                    "lineage": 0,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "wits": {
-                    "max": 6,
-                    "archetype": 0,
-                    "lineage": 0,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "luck": {
-                    "max": 6,
-                    "archetype": 0,
-                    "lineage": 0,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "mind": {
-                    "max": 6,
-                    "archetype": 0,
-                    "lineage": 0,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "soul": {
-                    "max": 6,
-                    "archetype": 0,
-                    "lineage": 0,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                }
-            },
-            "thresholds": {
-                "physique": {
-                    "body": 0,
-                    "grace": 0,
-                    "bonus": 0,
-                    "total": 0,
-                    "difficulty": 1
-                },
-                "avoidance": {
-                    "wits": 0,
-                    "luck": 0,
-                    "bonus": 0,
-                    "total": 0,
-                    "difficulty": 1
-                },
-                "discipline": {
-                    "mind": 0,
-                    "soul": 0,
-                    "bonus": 0,
-                    "total": 0,
-                    "difficulty": 1                
-                }
-            },
             "qualities": {
-
             },
-            "skills":{
-                "warfare": {
-                    "die": 4,
-                    "trait": "body",
-                    "difficulty": 1,
-                    "max": 5,
-                    "base": 1,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "cunning": {
-                    "die": 4,
-                    "trait": "wits",
-                    "difficulty": 1,
-                    "max": 5,
-                    "base": 1,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "esoterica": {
-                    "die": 4,
-                    "trait": "mind",
-                    "difficulty": 1,
-                    "max": 5,
-                    "base": 1,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "athletics": {
-                    "die": 4,
-                    "trait": "body",
-                    "difficulty": 1,
-                    "max": 5,
-                    "base": 1,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "survival": {
-                    "die": 4,
-                    "trait": "wits",
-                    "difficulty": 1,
-                    "max": 5,
-                    "base": 1,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "knowledge": {
-                    "die": 4,
-                    "trait": "mind",
-                    "difficulty": 1,
-                    "max": 5,
-                    "base": 1,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "aptitude": {
-                    "die": 4,
-                    "trait": "mind",
-                    "difficulty": 1,
-                    "max": 5,
-                    "base": 1,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "creativity": {
-                    "die": 4,
-                    "trait": "soul",
-                    "difficulty": 1,
-                    "max": 5,
-                    "base": 1,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                },
-                "diplomacy": {
-                    "die": 4,
-                    "trait": "soul",
-                    "difficulty": 1,
-                    "max": 5,
-                    "base": 1,
-                    "feat": 0,
-                    "bonus": 0,
-                    "level": 0,
-                    "total": 0
-                }
-            },
-            "conditions":{
-                "health":{
-                    "hp": 4,
-                    "wounds": 0
-                },
-                "destiny":{
-                    "cards": 4
-                }
-            }
+            "templates": ["traitsdata", "thresholdsdata", "skillsdata", "conditionsdata"]
         },
         "monster": {
-            "name": "Rat",
-            "status": "hungry"
+            "tier": 1,
+            "templates": ["traitsdata", "thresholdsdata", "skillsdata", "conditionsdata"]
         }
     },
     "Item": {
@@ -356,15 +399,18 @@
             },
             "skillbonus": {
                 "skills": {
-                    "warfare": false,
-                    "cunning": false,
-                    "esoterica": false,
                     "athletics": false,
-                    "survival": false,
-                    "knowledge": false,
+                    "warfare": false,
+                    "acrobatics": false,
+                    "cunning": false,
                     "aptitude": false,
+                    "survival": false,
                     "creativity": false,
-                    "diplomacy": false
+                    "fortune": false,
+                    "esoterica": false,
+                    "knowledge": false,
+                    "diplomacy": false,
+                    "intuition": false
                 },
                 "skillsallselected": false
             },

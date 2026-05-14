@@ -29,7 +29,7 @@ Hooks.once("init", function () {
   // })
 
   // Define custom Document classes
-  console.log(CONFIG)
+  CONFIG.Actor.documentClass = altaraactor
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item
   // if the transfer property on the Active Effect is true.
@@ -38,7 +38,7 @@ Hooks.once("init", function () {
   // Register sheet application classes
   Actors.unregisterSheet("core", Actors);
   Actors.registerSheet("atlara", charactersheet, { 
-    types: ["character"], 
+    types: ["character", "monster"], 
     makeDefault: true
   });
   // Actors.registerSheet("atlara", mymonstersheet, { 

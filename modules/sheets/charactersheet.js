@@ -1,6 +1,6 @@
 export default class charactersheet extends foundry.appv1.sheets.ActorSheet {
     get template ()  {
-        return "systems/atlara/templates/sheets/character-sheet.html";
+        return `systems/atlara/templates/sheets/${this.actor.type}-sheet.html`
     }
     activateListeners(html)
     {
@@ -15,17 +15,18 @@ export default class charactersheet extends foundry.appv1.sheets.ActorSheet {
     }
     getData() {
         const context = super.getData();
-
-        context.items = {
-            equipment: this.actor.items.filter(i => i.type === "equipment"),
-            lineage: this.actor.items.find(i => i.type === "lineage"),
-            archetype: this.actor.items.find(i => i.type === "archetype"),
-            feats: this.actor.items.filter(i => i.type === "feat"),
-            powers: this.actor.items.filter(i => i.type === "power")
-        };
-        this.checkLevel(context, "trait")
-        this.checkLevel(context, "skill")
-        console.log(context)
+        if(this.actor.type == "character"){
+            context.items = {
+                equipment: this.actor.items.filter(i => i.type === "equipment"),
+                lineage: this.actor.items.find(i => i.type === "lineage"),
+                archetype: this.actor.items.find(i => i.type === "archetype"),
+                feats: this.actor.items.filter(i => i.type === "feat"),
+                powers: this.actor.items.filter(i => i.type === "power")
+            };
+            this.checkLevel(context, "trait")
+            this.checkLevel(context, "skill")
+            console.log(context)
+        }
         return context;
     }
     checkLevel(context, type){

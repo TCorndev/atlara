@@ -1,0 +1,92 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="fullbox traits">
+        <table>
+            <tr>
+                <th colspan="6">Traits</th>
+            </tr>
+            <tr>
+                <td>Body</td>
+                <td>Grace</td>
+                <td>Wits</td>
+                <td>Luck</td>
+                <td>Mind</td>
+                <td>Soul</td>
+            </tr>
+            <tr>
+                {{#each actor.system.traits}}
+                <td><input type="number" name="system.traits.{{@key}}.total" value="{{this.total}}"></td>
+                {{/each}}
+            </tr>
+        </table>
+    </div>
+    <div class="fullbox thresholds-qualities flex">
+        <table class="thresholds border">
+            <tr>
+                <th colspan="3">THRESHOLDS</th>
+            </tr>
+            <tr>
+                <td><i>Physique</i></td>
+                <td><i>Avoidance</i></td>
+                <td><i>Discipline</i></td>
+            </tr>
+            <tr>
+                <td>{{actor.system.thresholds.physique.total}} Diff: {{actor.system.thresholds.physique.difficulty}}</td>
+                <td>{{actor.system.thresholds.avoidance.total}} Diff: {{actor.system.thresholds.avoidance.difficulty}}</td>
+                <td>{{actor.system.thresholds.discipline.total}} Diff: {{actor.system.thresholds.discipline.difficulty}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="fullbox skills-conditions flex">
+            <table class="border">
+                <tr>
+                    <th colspan="5">SKILLS</th>
+                </tr>
+                <tr>
+                    <th>skill</th>
+                    <th></th>
+                    <th>trait</th>
+                    <th>die</th>
+                    <th>difficulty</th>
+                </tr>
+                {{#each actor.system.skills}}
+                <tr>
+                    <td>{{@key}}</td>
+                    <td><button class="skillroll" data-skill="{{@key}}">Roll</button></td>
+                    <td>
+                        <select name="system.skills.{{@key}}.trait">
+                            <option value="body" {{#if (eq this.trait "body")}}selected{{/if}}>Body</option>
+                            <option value="grace" {{#if (eq this.trait "grace")}}selected{{/if}}>Grace</option>
+                            <option value="wits" {{#if (eq this.trait "wits")}}selected{{/if}}>Wits</option>
+                            <option value="luck" {{#if (eq this.trait "luck")}}selected{{/if}}>Luck</option>
+                            <option value="mind" {{#if (eq this.trait "mind")}}selected{{/if}}>Mind</option>
+                            <option value="soul" {{#if (eq this.trait "soul")}}selected{{/if}}>Soul</option>
+                        </select>
+                    </td>
+                    <td>        
+                        d{{this.die}}
+                        {{#if (lookup ../skilllevelup @key)}}
+                            <button class="levelup" data-target="{{@key}}" data-type="skill"><i class="fas fa-arrow-up"></i></button>
+                        {{/if}}                    
+                    </td>
+                    <td><input type="number" name="system.skills.{{@key}}.difficulty" value="{{this.difficulty}}" style="width: 40px"></td>
+                </tr>
+                {{/each}}
+            </table>
+            <table class="border conditions">
+                <tr class="border">
+                    <th colspan="2">CONDITIONS</th>
+                </tr>
+                <tr>
+                    <td>Health Track</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                        <input type="checkbox">
+                        <input type="checkbox">
+                        <input type="checkbox">
+                    </td>
+                </tr>
+            </table>
+        </div>
+</form>

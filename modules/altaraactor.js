@@ -4,9 +4,11 @@ export default class altaraactor extends Actor {
         super.prepareDerivedData();
         const system = this.system;
         //set tier
-        system.details.tier = Math.ceil(system.details.level/3)
-        this.setTraitsAndSkills(system)
-        this.setLevelBonus(system)
+        if(this.type == "character"){
+            system.details.tier = Math.ceil(system.details.level/3)
+            this.setTraitsAndSkills(system)
+            this.setLevelBonus(system)
+        }
         this.setThresholds(system)
     }
     setTraitsAndSkills(system) {
