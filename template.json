@@ -477,5 +477,16 @@
         "power": {
             "templates": ["base","powerdata"]
         }
+    },
+    "Card": {
+        "types": ["card"],
+        "card": {
+            "suit": "spades",
+            "value": 1,
+            "effect": "Enter effect here",
+            "trump": false,
+            "face": false,
+            "joker": false
+        }
     }
 }
