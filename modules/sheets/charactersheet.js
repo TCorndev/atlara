@@ -21,12 +21,14 @@ export default class charactersheet extends foundry.appv1.sheets.ActorSheet {
                 lineage: this.actor.items.find(i => i.type === "lineage"),
                 archetype: this.actor.items.find(i => i.type === "archetype"),
                 feats: this.actor.items.filter(i => i.type === "feat"),
-                powers: this.actor.items.filter(i => i.type === "power")
+                powers: this.actor.items.filter(i => i.type === "power"),
+                merit: this.actor.items.find(i => i.type === "merit"),
+                flaw: this.actor.items.find(i => i.type === "flaw")
             };
             this.checkLevel(context, "trait")
             this.checkLevel(context, "skill")
-            console.log(context)
         }
+        console.log(this.actor.items)
         return context;
     }
     checkLevel(context, type){

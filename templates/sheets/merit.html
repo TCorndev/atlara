@@ -1,0 +1,11 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+<div>
+    <textarea name="system.description">{{item.system.description}}</textarea>
+</div>
+<select class="trait-selection">
+    <option value="none"></option>
+    {{#each item.system.traits}}
+    <option value="{{@key}}" {{#if this}} selected {{/if}}>{{@key}}</option>
+    {{/each}}
+</select>
+</form>

@@ -10,9 +10,31 @@
                     <td>Name</td>
                     <td><input name="system.details.name" value="{{actor.system.details.name}}"></td>
                     <td>Merit</td>
-                    <td><input name="system.details.merit" value="{{actor.system.details.merit}}"></td>
+                    {{#if items.merit}}
+                    <td><span class="item display-item" data-item="{{items.merit.id}}">{{items.merit.name}}</span><a class="fas fa-x removeitem" data-item="{{items.merit.id}}"></a></td>
+                    {{else}}
+                    <td></td>
+                    {{/if}}
                     <td>Level</td>
-                    <td><input name="system.details.level" value="{{actor.system.details.level}}"></td>
+                    <td>    <select class="level-select" name="system.details.level" data-dtype="Number">
+                                <option value=1 {{#if (eq actor.system.details.level 1)}}selected{{/if}}>1</option>
+                                <option value=2 {{#if (eq actor.system.details.level 2)}}selected{{/if}}>2</option>
+                                <option value=3 {{#if (eq actor.system.details.level 3)}}selected{{/if}}>3</option>
+                                <option value=4 {{#if (eq actor.system.details.level 4)}}selected{{/if}}>4</option>
+                                <option value=5 {{#if (eq actor.system.details.level 5)}}selected{{/if}}>5</option>
+                                <option value=6 {{#if (eq actor.system.details.level 6)}}selected{{/if}}>6</option>
+                                <option value=7 {{#if (eq actor.system.details.level 7)}}selected{{/if}}>7</option>
+                                <option value=8 {{#if (eq actor.system.details.level 8)}}selected{{/if}}>8</option>
+                                <option value=9 {{#if (eq actor.system.details.level 9)}}selected{{/if}}>9</option>
+                                <option value=10 {{#if (eq actor.system.details.level 10)}}selected{{/if}}>10</option>
+                                <option value=11 {{#if (eq actor.system.details.level 11)}}selected{{/if}}>11</option>
+                                <option value=12 {{#if (eq actor.system.details.level 12)}}selected{{/if}}>12</option>
+                                <option value=13 {{#if (eq actor.system.details.level 13)}}selected{{/if}}>13</option>
+                                <option value=14 {{#if (eq actor.system.details.level 14)}}selected{{/if}}>14</option>
+                                <option value=15 {{#if (eq actor.system.details.level 15)}}selected{{/if}}>15</option>
+                            </select>
+                    </td>
+
                 </tr>
                 <tr>
                     <td>Lineage</td>
@@ -22,7 +44,11 @@
                     <td></td>
                     {{/if}}
                     <td>Flaw</td>
-                    <td><input name="system.details.flaw" value="{{actor.system.details.flaw}}"></td>
+                    {{#if items.flaw}}
+                    <td><span class="item display-item" data-item="{{items.flaw.id}}">{{items.flaw.name}}</span><a class="fas fa-x removeitem" data-item="{{items.flaw.id}}"></a></td>
+                    {{else}}
+                    <td></td>
+                    {{/if}}
                     <td>Tier</td>
                     <td>{{actor.system.details.tier}}</td>
                 </tr>
@@ -33,9 +59,9 @@
                         <span class="item display-item" data-item="{{items.archetype.id}}">{{items.archetype.name}}</span><a class="fas fa-x removeitem" data-item="{{items.archetype.id}}"></a>
                         {{/if}}
                     </td>
-                    <td>Ethos</td>
+                    <td>Upbringing</td>
                     <td><input name="system.details.ethos" value="{{actor.system.details.ethos}}"></td>
-                    <td>Title</td>
+                    <td>Virtue</td>
                     <td><input name="system.details.title" value="{{actor.system.details.title}}"></td>
                 </tr>
             </table>

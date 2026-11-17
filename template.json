@@ -11,6 +11,8 @@
                         "max": 6,
                         "archetype": 0,
                         "lineage": 0,
+                        "merit": 0,
+                        "flaw": 0,
                         "feat": 0,
                         "bonus": 0,
                         "level": 0,
@@ -20,6 +22,8 @@
                         "max": 6,
                         "archetype": 0,
                         "lineage": 0,
+                        "merit": 0,
+                        "flaw": 0,
                         "feat": 0,
                         "bonus": 0,
                         "level": 0,
@@ -29,6 +33,8 @@
                         "max": 6,
                         "archetype": 0,
                         "lineage": 0,
+                        "merit": 0,
+                        "flaw": 0,
                         "feat": 0,
                         "bonus": 0,
                         "level": 0,
@@ -38,6 +44,8 @@
                         "max": 6,
                         "archetype": 0,
                         "lineage": 0,
+                        "merit": 0,
+                        "flaw": 0,
                         "feat": 0,
                         "bonus": 0,
                         "level": 0,
@@ -47,6 +55,8 @@
                         "max": 6,
                         "archetype": 0,
                         "lineage": 0,
+                        "merit": 0,
+                        "flaw": 0,
                         "feat": 0,
                         "bonus": 0,
                         "level": 0,
@@ -56,6 +66,8 @@
                         "max": 6,
                         "archetype": 0,
                         "lineage": 0,
+                        "merit": 0,
+                        "flaw": 0,
                         "feat": 0,
                         "bonus": 0,
                         "level": 0,
@@ -289,6 +301,8 @@
             "path",
             "archetype",
             "lineage",
+            "merit",
+            "flaw",
             "power"
             ],
         "templates": {
@@ -513,6 +527,12 @@
         },
         "archetype": {
             "templates": ["base", "archetypedata", "skillbonus", "traitbonus"]
+        },
+        "merit":{
+            "templates": ["base", "traitbonus"]
+        },
+        "flaw": {
+            "templates": ["base", "traitbonus"]
         },
         "feat": {
             "templates": ["base", "featdata"]

@@ -14,12 +14,17 @@ export default class altaraactor extends Actor {
     setTraitsAndSkills(system) {
         const lineage = this.items.find(i => i.type === "lineage")
         const archetype = this.items.find(i => i.type === "archetype")
+        const merit = this.items.find(i => i.type === "merit")
+        const flaw = this.items.find(i => i.type === "flaw")
         for (const [key, trait] of Object.entries(system.traits)){
             trait.max = 5 + Number(system.details.tier)
             trait.lineage = lineage?.system?.traits[key] ?? 1
             trait.archetype = archetype?.system?.traits[key]? 1 : 0
-            trait.total = Math.min(trait.max, trait.lineage + trait.archetype + trait.feat + trait.level + trait.bonus)
+            trait.merit = merit?.system?.traits[key]? 1 : 0
+            trait.flaw = flaw?.system?.traits[key]? -1 : 0
+            trait.total = Math.min(trait.max, trait.lineage + trait.archetype + trait.merit + trait.flaw +trait.feat + trait.level + trait.bonus)
         }
+        console.log(system.traits)
         for (const [key, skill] of Object.entries(system.skills)){
             if (archetype?.system?.skills[key] || lineage?.system?.skills[key]){
                 skill.base = 2 //If both are true, is an extra skillup given?
@@ -43,7 +48,8 @@ export default class altaraactor extends Actor {
 
         //set points based on level
         skillpoints.points = Number(level)
-        traitpoints.points = Math.floor(level/2)
+        //traitpoints.points = Math.floor(level/2)
+        traitpoints.points = Number(level) //Determine if traitpoints are gained every level or not, the rules are inconsistent on this.
         featpoints.points = Math.ceil(level/2)
         talentpoints.points = Number(level)
 

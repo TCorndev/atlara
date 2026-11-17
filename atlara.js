@@ -4,6 +4,8 @@ import equipmentsheet from "./modules/sheets/equipment.js";
 import lineagesheet from "./modules/sheets/lineage.js";
 import altaraactor from "./modules/altaraactor.js"
 import { PRESET_DECKS } from "./modules/decks.js"
+import merit_flawsheet from "./modules/sheets/merit-flaw.js";
+import featsheet from "./modules/sheets/feat.js";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -50,10 +52,18 @@ Hooks.once("init", function () {
     types: ["equipment"], 
     makeDefault: true
   })
-  Items.registerSheet("atlara", lineagesheet), {
+  Items.registerSheet("atlara", lineagesheet, {
     types: ["lineage", "archetype"],
     makeDefault: true
-  }
+  })
+  Items.registerSheet("atlara", merit_flawsheet, {
+    types: ["merit", "flaw"],
+    makeDefault: true
+  })
+  Items.registerSheet("atlara", featsheet, {
+    types: ["feat"],
+    makeDefault: true
+  })
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
